@@ -694,3 +694,4 @@
     <li><a href="https://www.typescriptlang.org/docs/handbook/2/generics.html">Microsoft - Documentação</a> </li>
     <li><a href="https://learn.microsoft.com/pt-br/training/modules/typescript-generics/">Microsoft - treinamento</a> </li>
   </lu>
+  

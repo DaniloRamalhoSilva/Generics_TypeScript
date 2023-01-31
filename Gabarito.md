@@ -115,15 +115,3 @@
   ```
   
 </details>
-
-
-
-
-
-2. 
-
-
-
-const filterById = <T extends string | number >(id: T , data: IDataId<T>[] ) => {
-  return data.filter((d) => id === d.id);
-}
