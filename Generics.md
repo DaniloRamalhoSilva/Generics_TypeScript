@@ -33,8 +33,8 @@
   <p>De acordo com a documentação “Os genéricos são modelos de código que você pode definir e reutilizar em toda a base de código. Eles fornecem uma forma de informar a funções, classes ou interfaces que tipo você deseja usar ao chamá-las.”. </p>
   <p>Para entender melhor, você pode fazer uma analogia com as figuras a baixo onde a chave representa a funções, classes ou interfaces, e a ponta representa o tipo do dado.</p>
   <p>
-    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/generics/master/imagens/kitFerramenta.png?token=GHSAT0AAAAAAB5SWF6D4JR566K2B6KQZZNEY6ZPSSQ" width="350" alt="kit chave">
-    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/generics/master/imagens/chaveMultiUso.png?token=GHSAT0AAAAAAB5SWF6CTSVD6HW5Z2KBLGYQY6ZPSAQ" width="350" alt="chave multi uso">
+    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/kitFerramenta.png" width="350" alt="kit chave">
+    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/chaveMultiUso.png" width="350" alt="chave multi uso">
   </p>
   <p>Na imagem 1, sem o uso do generic você precisaria de varias funções, classes ou interfaces, uma para cada tipo de dado. Já na imagem 2, com o uso do generics você precisaria apenas de uma funções, classes ou interfaces e o tipo do dado seri informado apenas quando ela for utilizada. </p>
 
@@ -86,7 +86,7 @@
   <p>Repare que o T entre os colchetes angulares (<>) recebe um tipo quando a função e chamada e atribui esse tipo a letra T do parâmetro e do retorno da função.</p>
 
   <p>
-    <img src="" width="350" alt="injeção Tipo">
+    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/InjecaoTipo.png" width="450" alt="injeção Tipo">
   </p>
 
 </details>
@@ -220,7 +220,7 @@
   U =  string</p>
 
   <p>
-    <img src="" width="350" alt="injeção Tipo">
+    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/InjecaoTipo2.png" width="550" alt="injeção Tipo">
   </p>
 
 
@@ -352,7 +352,7 @@
   <p>Para isso pademos reparar que os metodos das classes “Product” e “User” são bem parecidos, mudando apenas os tipos e as entidades recebidas e retornadas.</p>
 
   <p>
-    <img src="" width="350" alt="comparando">
+    <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/comparacaoTipo.png" width="1050" alt="comparando">
   </p>
 
   <p>Levando isso em consideração podemos então criar uma classe abstrata, implementar os métodos de forma genérica e estender dessa classe para  “Product” e “User”</p>
@@ -694,4 +694,3 @@
     <li><a href="https://www.typescriptlang.org/docs/handbook/2/generics.html">Microsoft - Documentação</a> </li>
     <li><a href="https://learn.microsoft.com/pt-br/training/modules/typescript-generics/">Microsoft - treinamento</a> </li>
   </lu>
-  
