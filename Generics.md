@@ -3,7 +3,7 @@
   <summary><strong> 🤷🏽‍♀️ O que vamos aprender?</strong></summary>
   <br>
   <p>
-   Aqui você vai aprender sobre o generics do TybeScript, sua importância, e os contextos em que ele pode ser aplicado. 
+   Aqui você vai aprender sobre o generics do TypeScript, sua importância, e os contextos em que ele pode ser aplicado. 
   </p>
   <lu>
     <H3>Você sera capaz de:</H3>    
@@ -36,7 +36,7 @@
     <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/kitFerramenta.png" width="350" alt="kit chave">
     <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/chaveMultiUso.png" width="350" alt="chave multi uso">
   </p>
-  <p>Na imagem 1, sem o uso do generic você precisaria de varias funções, classes ou interfaces, uma para cada tipo de dado. Já na imagem 2, com o uso do generics você precisaria apenas de uma funções, classes ou interfaces e o tipo do dado seri informado apenas quando ela for utilizada. </p>
+  <p>Na imagem 1, sem o uso do generic você precisaria de varias funções, classes ou interfaces, uma para cada tipo de dado. Já na imagem 2, com o uso do generics você precisaria apenas de uma funções, classes ou interfaces e o tipo do dado seria informado apenas quando ela for utilizada. </p>
 
 </details>
 <br>
@@ -52,7 +52,7 @@
   <br>
   <p>Para entendermos como definir uma função generic vamos imaginar que precisamos de uma função simples que receba um parâmetro e o retorna.
   </p>
-  <p>Pensando no uso do typeScripte precisaríamos criar uma função do tipo any, o que não e recomendado.</p>
+  <p>Pensando no uso do typeScript precisaríamos criar uma função do tipo any, o que não e recomendado.</p>
  
   ```typescript
     function semGenerics (param: any): any {
@@ -60,7 +60,7 @@
 		}
   ```
   <br>
-  <p>ou varias funçoes, uma para cada tipo de dado, o que deixaria o projeto maior e mais complexo.
+  <p>ou varias funções, uma para cada tipo de dado, o que deixaria o projeto maior e mais complexo.
   </p>
 
   ```typescript
@@ -94,16 +94,16 @@
 <details>
   <summary><strong> Declarar uma interface genérica </strong></summary>
   <br>
-  <p>Para entendermos o uso de uma interface genérica vamos imaginar que precisamos de uma função que filtra um Id em um arrey de ids, sendo que essa função sirva tanto para ids do tipo string, quanto para ids do tipo number.</p>
+  <p>Para entendermos o uso de uma interface genérica vamos imaginar que precisamos de uma função que filtra um Id em um array de ids, sendo que essa função sirva tanto para ids do tipo string, quanto para ids do tipo number.</p>
   <p>Como seria isso?</p>
-  <p>Primeiro vamos criar uma função generic como aprendemos anteriormente, mas agora com dois parâmetros, um id e um arrey de ids.</p>
+  <p>Primeiro vamos criar uma função generic como aprendemos anteriormente, mas agora com dois parâmetros, um id e um array de ids.</p>
 
   ```typescript
     function filterById<T>(id: T, dataIds: Array<T>): T {
       const mmatcheId = dataIds.filter(dataId => dataId.id === id)
       return mmatcheId[0];
     }
-    onsole.log(filterById<number>(4, [1, 2, 3, 4, 10 ]));
+    console.log(filterById<number>(4, [1, 2, 3, 4, 10 ]));
     // 4
   ```
   <p>Agora que temos nossa função funcionando vamos substituir esse array genérico por um mais especifico usando uma interface.</p>
@@ -200,7 +200,7 @@
   <p>Repare que passamos o tipo dos parâmetros do método PrintTypeOf apenas quando a classe foi instanciada, e o tipo foi atribuído aos parâmetros por meio da letra T, e ao chamarmos o método, o typeScript nos “obriga” a usarmos dois parâmetros do tipo string.</p>
   <p>Mas e se precisássemos de mais de um tipo genérico, sera que tem como?</p>
   <p>A resposta e Simm!!!</p>
-  <p>Podemos passar quantos tipos precisarmos entre os colchetes angulares (<>), porexemple, função<Tipo1, Tipo2, Tipo3, ...>(). Isso pode ser comparado aos colchetes do javaScrip, função(paranmetro1, parametro2, parametro3, ...)</p>
+  <p>Podemos passar quantos tipos precisarmos entre os colchetes angulares (<>), por exemplo, função<Tipo1, Tipo2, Tipo3, ...>(). Isso pode ser comparado aos colchetes do javaScrip, função(paranmetro1, parametro2, parametro3, ...)</p>
 
   ```typescript
     class GenericClass<T, U> {
@@ -231,7 +231,7 @@
   <br>
   <p>Agora você deve estar se perguntando, “Beleza, já sei para que serve e quando devo utilizar, mas como eu faço isso na pratica?”.</p>
   <p>"Bora codar" que te explico!</p> 
-  <p>Para aplicarmos o que aprendemos e fixar o conhecimento vamos refatorar o codigo a seguir.</p>
+  <p>Para aplicarmos o que aprendemos e fixar o conhecimento vamos refatorar o código a seguir.</p>
 
   - <h2><b>Aplicação sem generics</b></h2>
   <p>Estrutura do projeto <br>
@@ -241,7 +241,7 @@
   |_ Product.ts<br>
   |_ User.ts</p>
   <br>
-  <p>No arquivo “Data.ts” temos dois arreys de objetos “dataUser” e “dataProduct” que vão simular o baco de dados.</p>
+  <p>No arquivo “Data.ts” temos dois arrays de objetos “dataUser” e “dataProduct” que vão simular o banco de dados.</p>
 
   ```typescript
     // Data.ts
@@ -260,7 +260,7 @@
     ]
   ```
   <br>
-  <p>No arquivo “Product.ts” temos uma interface “IProduct” e a classe “Product” com alguns metodos que simula a inserção (create), consulta por id (getById) e consulta todos os produtos (getAll);</p>
+  <p>No arquivo “Product.ts” temos uma interface “IProduct” e a classe “Product” com alguns métodos que simula a inserção (create), consulta por id (getById) e consulta todos os produtos (getAll);</p>
 
    ```typescript
     // Product.ts
@@ -285,7 +285,7 @@
     } 
   ```
   <br>
-  <p>No arquivo “User.ts” temos uma interface “IUser” e a classe “User” com alguns metodos que simula a inserção (create), consulta por id (getById) e consulta todos os usuarios (getAll);</p>
+  <p>No arquivo “User.ts” temos uma interface “IUser” e a classe “User” com alguns métodos que simula a inserção (create), consulta por id (getById) e consulta todos os usuarios (getAll);</p>
 
   ```typescript
     // User.ts
@@ -310,7 +310,7 @@
     } 
   ```
   <br>
-  <p>No arquivo “index.ts”, importamos o nosso “banco de dados” representado pelos arreys “dataUser” e “dataProduct” e importamos as classes “Product” e “User”, para podermos instancialas e testar cada metodo e ver se tudo esta funcionando.</p>
+  <p>No arquivo “index.ts”, importamos o nosso “banco de dados” representado pelos arrays “dataUser” e “dataProduct” e importamos as classes “Product” e “User”, para podermos instancialas e testar cada metodo e ver se tudo esta funcionando.</p>
 
   ```typescript
     // index.ts
@@ -335,8 +335,8 @@
       { id: 11, nome: 'Pati' }
     ] */
 
-    console.log( myProduct.create({id: "7899", descrição: 'xadres'}, dataProduct) );
-    // { id: '7899', 'descrição': 'xadres' }
+    console.log( myProduct.create({id: "7899", descrição: 'xadrez'}, dataProduct) );
+    // { id: '7899', 'descrição': 'xadrez' }
     console.log( myProduct.getById('7892', dataProduct) );
     // { id: '7892', 'descrição': 'carrinho' }
     console.log( myProduct.getAll(dataProduct) );
@@ -345,11 +345,11 @@
       { id: '7892', 'descrição': 'carrinho' },
       { id: '7893', 'descrição': 'boneca' },
       { id: '7894', 'descrição': 'lego' },
-      { id: '7899', 'descrição': 'xadres' }
+      { id: '7899', 'descrição': 'xadrez' }
     ] */
   ```
   <p>Agora que tudo esta funcionando vamos começar a refatorar e aplicar os conhecimentos de generics.</p>
-  <p>Para isso pademos reparar que os metodos das classes “Product” e “User” são bem parecidos, mudando apenas os tipos e as entidades recebidas e retornadas.</p>
+  <p>Para isso pademos reparar que os métodos das classes “Product” e “User” são bem parecidos, mudando apenas os tipos e as entidades recebidas e retornadas.</p>
 
   <p>
     <img src="https://raw.githubusercontent.com/DaniloRamalhoSilva/Generics_TypeScript/master/imagens/comparacaoTipo.png" width="1050" alt="comparando">
@@ -416,7 +416,7 @@
   <p>O arquivo  “User.ts” sera refatorada, deixando nossa classe “User” desta forma.</p>
   <p>E voala! </p>
   <br>
-  <p>A gora podemos extender nossa Classe CRUD para diversas outras entidades e usufluir dos poderes do generics, deixando nosso codigo mais robusto, sem ficar repetindo codigos. Bacana ne?</p>
+  <p>Agora podemos extender nossa Classe CRUD para diversas outras entidades e usufluir dos poderes do generics, deixando nosso código mais robusto, sem ficar repetindo codigos. Bacana ne?</p>
   <br>
   <p>Agora apenas para fins didáticos e relembrarmos o conceito de Type Constraints, vamos fazer mais uma refatoração a nossa classe CRUD restringindo nossa letra T a apenas receber entidades do tipo “Product” ou do tipo “User”, e restringir a letra U apenas aos tipos number ou string.</p>
 
@@ -461,7 +461,7 @@
 <details>
   <summary><strong> Exercicio 1 </strong></summary>
   <br>
-  <p>1. Dado o codigo abaixo implemente a funções comparaGeneric de mode que subistutua as funçoes comparaNumber e comparaString<Br> 
+  <p>1. Dado o código abaixo implemente a funções comparaGeneric de mode que subistutua as funçoes comparaNumber e comparaString<Br> 
   obs. o paremetros da função comparaGeneric devem ser tipados e serem do mesmo tipo para que possam ser comparados corretamente.</p>
 
   ```typescript
@@ -486,8 +486,8 @@
 <details>
   <summary><strong> Exercicio 2 </strong></summary>
   <br>
-  <p>2. Dado o codigo abaixo refetore a interface IDataId  e a função filterById de modo que a função possa filtra ids do tipo string ou do tipo number;<br>
-  Dica: lembrese do conceito de Type Constraints</p>
+  <p>2. Dado o código abaixo refetore a interface IDataId  e a função filterById de modo que a função possa filtra ids do tipo string ou do tipo number;<br>
+  Dica: lembre-se do conceito de Type Constraints</p>
 
   ```typescript
     interface IDataId {
@@ -521,7 +521,7 @@
 <details>
   <summary><strong> Exercicio 3 </strong></summary>
   <br>
-  <p>3. Dado os arreys “produtos” e “clientes” abaixo faça:</p>
+  <p>3. Dado os arrays “produtos” e “clientes” abaixo faça:</p>
 
   ```typescript
     const produto = [
@@ -541,16 +541,16 @@
   - Crie uma classe abstrata “ClassBase”<br>
   - Crie a classe “Cliente” e extenda da classe  “ClassBase”<br>
   - Crie a classe “Produto” e extenda da classe  “ClassBase”<br>
-  - O construtor da “ClassBase” deve receber um atributo generico, podendo ser um arrey de clientes ou um arrey de usuarios;<br>
-  - O costrutor da classe “Cliente” deve ter o metodo super passando o arrey de clientes;<br>
-  - O costrutor da classe “Produto” deve ter o metodo super passando o arrey de produtos;<br>
-  - A classe “ClassBase” deve ter os metodos: create, delete, update, getById e getAll<br>
-    - O metodos getAll se for chamado por uma instacia da classe “Cliente” deve retornar o arrey de clientes. <br>
-      Exemple da chamada:
+  - O construtor da “ClassBase” deve receber um atributo generico, podendo ser um array de clientes ou um array de usuarios;<br>
+  - O costrutor da classe “Cliente” deve ter o metodo super passando o array de clientes;<br>
+  - O costrutor da classe “Produto” deve ter o metodo super passando o array de produtos;<br>
+  - A classe “ClassBase” deve ter os métodos: create, delete, update, getById e getAll<br>
+    - O métodos getAll se for chamado por uma instancia da classe “Cliente” deve retornar o array de clientes. <br>
+      Exemplo da chamada:
       ```typescript
         myCliente.getAll()    
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: 1, nome: 'Maria' },
@@ -560,22 +560,22 @@
         ]    
       ```
     
-    - O metodos getById  se for chamado por uma instacia da classe “Cliente” deve receber um parametro do tipo number e retornar um objeto no formato {id: number , nome: string}.
-      Exemple da chamada:
+    - O método getById  se for chamado por uma instancia da classe “Cliente” deve receber um parametro do tipo number e retornar um objeto no formato {id: number , nome: string}.<br>
+      Exemplo da chamada:
       ```typescript
         myCliente.getById(1)    
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         { id: 1, nome: 'Maria' }   
       ```
     
-    - O metodos create se for chamado por uma instacia da classe “Cliente” deve receber um objeto no formato {id: number , nome: string} e retornar o arrey de clientes atualizada com a inserção.
-      Exemple da chamada:
+    - O método create se for chamado por uma instancia da classe “Cliente” deve receber um objeto no formato {id: number , nome: string} e retornar o array de clientes atualizada com a inserção.<br>
+      Exemplo da chamada:
       ```typescript
         myCliente.create({id: 21, nome: 'Fabilo'})    
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: 1, nome: 'Maria' },
@@ -586,12 +586,12 @@
         ]  
       ```
     
-    - O metodos delete  se for chamado por uma instacia da classe “Cliente” deve receber um parametro do tipo number e retornar o arrey de clientes atualizado.
-      Exemple da chamada:
+    - O método delete  se for chamado por uma instancia da classe “Cliente” deve receber um parametro do tipo number e retornar o array de clientes atualizado.<br>
+      Exemplo da chamada:
       ```typescript
         myCliente.delete(1)   
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: 2, nome: 'João' },
@@ -601,12 +601,12 @@
         ] 
       ```
     
-    - O metodos update se for chamado por uma instacia da classe “Cliente” deve receber dois parametros um do tipo number  e um objeto no formato {id: number , nome: string} e retornar o arrey de clientes atualizado.
-      Exemple da chamada:
+    - O método update se for chamado por uma instancia da classe “Cliente” deve receber dois parametros um do tipo number  e um objeto no formato {id: number , nome: string} e retornar o array de clientes atualizado.<br>
+      Exemplo da chamada:
       ```typescript
         myCliente.update(21, {id: 21, nome: 'Fabio'})   
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: 2, nome: 'João' },
@@ -616,12 +616,12 @@
         ]
       ```
 
-    - O metodos getAll se for chamado por uma instacia da classe “Produto” deve retornar o arrey de produtos.
-      Exemple da chamada:
+    - O método getAll se for chamado por uma instancia da classe “Produto” deve retornar o array de produtos.<br>
+      Exemplo da chamada:
       ```typescript
         myProduct.getAll()   
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: '7891', nome: 'bola' },
@@ -631,22 +631,22 @@
         ]
       ```
 
-    - O metodos getById  se for chamado por uma instacia da classe “Produto” deve receber um parametro do tipo string e retornar um objeto no formato {id: string , nome: string} .
-      Exemple da chamada:
+    - O método getById  se for chamado por uma instancia da classe “Produto” deve receber um parametro do tipo string e retornar um objeto no formato {id: string , nome: string}.<br>
+      Exemplo da chamada:
       ```typescript
         myProduct.getById("7891")   
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         { id: '7891', nome: 'bola' }
       ```
 
-    - O metodos create se for chamado por uma instacia da classe “Produto” deve receber um objeto no formato {id: string , nome: string} e retornar o arrey de produtos atualizado com a inserção.
-      Exemple da chamada:
+    - O método create se for chamado por uma instancia da classe “Produto” deve receber um objeto no formato {id: string , nome: string} e retornar o array de produtos atualizado com a inserção.<br>
+      Exemplo da chamada:
       ```typescript
         myProduct.create({id: "7899", nome: 'xadrez'})   
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: '7891', nome: 'bola' },
@@ -657,12 +657,12 @@
         ]
       ```
 
-    - O metodos delete  se for chamado por uma instacia da classe “Produto” deve receber um parametro do tipo string e  retornar o arrey de produtos atualizado.
-      Exemple da chamada:
+    - O método delete  se for chamado por uma instancia da classe “Produto” deve receber um parametro do tipo string e  retornar o array de produtos atualizado.<br>
+      Exemplo da chamada:
       ```typescript
         myProduct.delete("7891")  
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: '7892', nome: 'carro' },
@@ -672,12 +672,12 @@
         ]
       ```
 
-    - O metodos update se for chamado por uma instacia da classe “Produto” deve receber dois parametros um do tipo string e um objeto no formato {id: string , nome: string} e retornar o arrey de clientes atualizado..
-      Exemple da chamada:
+    - O método update se for chamado por uma instancia da classe “Produto” deve receber dois parametros um do tipo string e um objeto no formato {id: string , nome: string} e retornar o array de clientes atualizado.<br>
+      Exemplo da chamada:
       ```typescript
         myProduct.update("7899", {id: "7899", nome: 'Jogo de xadrez'}) 
       ```
-      Exemple de saida:
+      Exemplo de saida:
       ```typescript
         [
           { id: '7892', nome: 'carro' },
